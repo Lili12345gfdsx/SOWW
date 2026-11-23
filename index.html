@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Лилия для SOWW</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..700&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* VOICE a professional sales proposal to the owner of SOWW, quiet and exact
+   IDEA a consulting brief printed on SOWW blush paper with SOWW wine as the only colour
+   PICTURE a goal ladder from 1,5 to 10 млн with benchmark rungs from top sellers
+   COLOUR SOWW blush ground and pale cards as in their deck, deep ink, wine accent, always light
+   TYPE Playfair Display for titles and figures, Inter for text
+   LAYOUT numbered sections, label column left and content right, hairline rows; phone stacks */
+:root{color-scheme:light;--bg:#F4E1E5;--paper:#FBF3F4;--ink:#2E2226;--soft:#6B5A5F;--wine:#8A3350;--tint:#EBCBD3;--line:#E2C7CE}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3,.num{font-family:"Playfair Display",Georgia,serif;font-weight:500;letter-spacing:-.01em;margin:0}
+h1{font-size:clamp(34px,5vw,60px);line-height:1.05;text-wrap:balance}
+h2{font-size:clamp(26px,3vw,36px);line-height:1.12;text-wrap:balance}
+h3{font-size:20px;line-height:1.25}
+p{margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding:0 max(5vw,16px)}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:24px;padding-top:12px;padding-bottom:12px}
+nav b{font-family:"Playfair Display",serif;font-size:19px;font-weight:500}
+nav .links{display:flex;gap:18px;font-size:14px;margin-left:auto;flex-wrap:wrap}
+nav a{color:var(--soft);text-decoration:none}
+nav a:hover{color:var(--wine)}
+.sub{color:var(--soft);max-width:66ch}
+.lbl{font-size:13px;font-weight:600;color:var(--wine)}
+header{padding:clamp(40px,6vw,80px) 0 clamp(28px,4vw,48px)}
+header .sub{font-size:18px;margin-top:14px}
+.chart{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:22px clamp(14px,3vw,32px);margin-top:32px}
+.ladder{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:end}
+.rung{background:var(--bg);border-radius:16px;padding:18px}
+.rung:nth-child(1){min-height:120px}.rung:nth-child(2){min-height:160px}.rung:nth-child(3){min-height:200px}.rung:nth-child(4){min-height:240px}
+.rung .num{font-family:"Playfair Display",serif;font-size:clamp(26px,3vw,36px);color:var(--ink);margin:6px 0 4px}
+.rung .t{font-size:14px;color:var(--soft)}
+.rung.goal{background:var(--wine)}.rung.goal .num,.rung.goal .t,.rung.goal .lbl{color:#FBF3F4}
+.note{font-size:13px;color:var(--soft);margin-top:10px}
+section{border-top:1px solid var(--line);padding:clamp(40px,5vw,72px) 0}
+.sec{display:grid;grid-template-columns:260px minmax(0,1fr);gap:clamp(24px,4vw,56px)}
+.side .n{font-family:"Playfair Display",serif;font-size:48px;line-height:1;color:var(--wine)}
+.side h2{margin-top:12px}
+.side .sub{margin-top:10px;font-size:15px}
+.rows{border-top:1px solid var(--ink)}
+.row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.4fr) minmax(0,1fr);gap:24px;padding:20px 0;border-bottom:1px solid var(--line)}
+.row h3 span{display:block;font-family:Inter,sans-serif;font-size:13px;font-weight:600;color:var(--wine);margin-bottom:4px}
+.row .what{font-size:14px;color:var(--soft);margin-top:6px}
+.row .res{color:var(--wine);font-weight:500}
+.colh{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.4fr) minmax(0,1fr);gap:24px;font-size:12px;font-weight:600;color:var(--soft);padding-bottom:8px}
+.time{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));position:relative}
+.time::before{content:"";position:absolute;left:0;right:0;top:7px;height:2px;background:var(--line)}
+.step{position:relative;padding:28px 20px 0 0}
+.step::before{content:"";position:absolute;left:0;top:0;width:16px;height:16px;border-radius:50%;background:var(--wine);border:3px solid var(--bg)}
+.step .num{font-size:26px;color:var(--ink);margin:4px 0 8px}
+.step p.t{font-size:15px;color:var(--soft)}
+.tri{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.pl{margin:12px 0 0;padding-left:18px;font-size:15px}
+.pl li{margin:6px 0}
+.box{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px}
+.box .sub{font-size:15px;margin-top:8px}
+.list{margin-top:28px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:40px}
+.li{padding:14px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px}
+.li i{font-style:normal;font-size:13px;font-weight:600;color:var(--wine);padding-top:2px}
+.li b{font-weight:600}
+.li span{display:block;font-size:14px;color:var(--soft)}
+.dirs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 40px}
+.dir h3{padding-bottom:10px;border-bottom:1px solid var(--ink)}
+.dir .out{margin-top:12px;font-size:14px}
+.dir .out b{color:var(--wine)}
+.freq{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.freq .box h3{color:var(--wine);font-size:22px}
+.freq .box h3{padding-bottom:10px;border-bottom:1px solid var(--line)}
+.freq .ritual{font-size:14px;color:var(--soft);margin-top:4px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.tb{padding:12px 0;border-bottom:1px solid var(--line)}
+.tb:last-child{border-bottom:0}
+.tb b{font-weight:600}
+.tb span{display:block;font-size:14px;color:var(--soft)}
+.end{background:#FBF3F4}
+.end .sub{margin-top:10px}
+@media(max-width:900px){.sec{grid-template-columns:minmax(0,1fr)}.freq{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:700px){nav .links{display:none}.row,.colh{grid-template-columns:minmax(0,1fr);gap:6px}.colh{display:none}.time{grid-template-columns:minmax(0,1fr)}.time::before{left:7px;right:auto;top:0;bottom:0;width:2px;height:auto}.step{padding:0 0 24px 32px}.tri,.list,.dirs,.ladder{grid-template-columns:minmax(0,1fr)}.rung{min-height:0!important}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>SOWW × Лилия</b><div class="links"><a href="#start">Старт</a><a href="#road">Дорожная карта</a><a href="#promo">Продвижение</a><a href="#grow">Развитие</a><a href="#reports">Отчётность</a></div></div></nav>
+
+<header><div class="wrap">
+<p class="lbl">Самопрезентация на позицию руководителя отдела продаж</p>
+<h1 style="margin-top:12px">Путь SOWW к 10 млн выручки в месяц</h1>
+<p class="sub">Как я выстрою продажи бренда на Ozon и Wildberries</p>
+<div class="chart">
+<div class="ladder">
+<div class="rung now"><p class="lbl">SOWW сейчас</p><p class="num">~1,5 млн</p><p class="t">выручка в месяц</p></div>
+<div class="rung"><p class="lbl">Ориентир 1</p><p class="num">Топ-20</p><p class="t">уровень продавцов топ-20 по предметам SOWW</p></div>
+<div class="rung"><p class="lbl">Ориентир 2</p><p class="num">Топ-10</p><p class="t">уровень продавцов топ-10</p></div>
+<div class="rung goal"><p class="lbl">Цель бренда</p><p class="num">10 млн</p><p class="t">выручка в месяц</p></div>
+</div>
+</div>
+</div></header>
+
+<section id="start"><div class="wrap sec">
+<div class="side"><p class="n">01</p><h2>Первые 14 дней</h2><p class="sub">Аудит и анализ, без которых нельзя дать план с цифрами. Первые 7 дней собираю данные, план согласуем с собственником</p></div>
+<div><div class="colh"><span>Что делаю</span><span>Как</span><span>Результат</span></div><div class="rows" id="stages"></div></div>
+</div></section>
+
+<section id="road"><div class="wrap sec">
+<div class="side"><p class="n">02</p><h2>Дорожная карта</h2></div>
+<div><div class="time" id="months"></div>
+<div class="box" style="margin-top:32px"><p class="lbl">Как ставлю цель</p><p style="margin-top:6px">Ориентир по каждому предмету беру от выручки топ-продавцов категории</p></div></div>
+</div></section>
+
+<section id="promo"><div class="wrap sec">
+<div class="side"><p class="n">03</p><h2>Продвижение</h2><p class="sub">Набор инструментов под каждый SKU собираю по результатам анализа и бюджету</p></div>
+<div>
+<div class="tri">
+<div class="box"><p class="lbl">Всегда</p><h3 style="margin-top:6px">Реклама</h3><ul class="pl"><li>Реклама в поиске и рекомендациях</li><li>Оплата за показы, за клик и за заказ</li><li>Вывод в топ</li><li>Медийная реклама и баннеры</li></ul></div>
+<div class="box"><p class="lbl">Индивидуально</p><h3 style="margin-top:6px">Инструменты продвижения</h3><ul class="pl"><li>Отзывы за баллы</li><li>Бонусы продавца</li><li>Акции и распродажи</li><li>Промокоды и скидки</li><li>Кэшбэк и рассрочка</li></ul></div>
+<div class="box"><p class="lbl">Если есть бюджет</p><h3 style="margin-top:6px">Внешний трафик</h3><ul class="pl"><li>Блогеры</li><li>Посевы в Telegram и VK</li><li>Промокоды для отслеживания продаж</li></ul></div>
+</div>
+<p class="lbl" style="margin-top:32px">Как управляю продвижением</p>
+<div class="list" id="ptasks" style="margin-top:4px"></div>
+</div>
+</div></section>
+
+<section id="grow"><div class="wrap sec">
+<div class="side"><p class="n">04</p><h2>Развитие бренда</h2><p class="sub">Что сделаю по каждому направлению и к чему это приведёт</p></div>
+<div class="dirs" id="tk"></div>
+</div></section>
+
+<section id="reports"><div class="wrap sec">
+<div class="side"><p class="n">05</p><h2>Таблицы и отчётность</h2><p class="sub">Какие таблицы веду и как часто показываю результат собственнику</p></div>
+<div class="freq" id="fq"></div>
+</div></section>
+
+<section class="end"><div class="wrap">
+<h2>Готова обсудить план на финальной встрече</h2>
+<p class="sub">Лилия. Опыт и кейсы в моём резюме</p>
+</div></section>
+
+<script>
+{
+const $=s=>document.querySelector(s);
+const MON=[['Этап 1','Аудит и план','Анализ ниши и конкурентов, юнит-экономика, калькулятор цен, РНП, план продаж'],['Этап 2','Рост лидеров','Реклама на лидеров, SEO карточек, вопросы и отзывы на новинки, рост Ozon'],['Этап 3','Расширение','Новые SKU, комплекты и боксы, тест обложек по CTR, календарь акций'],['Этап 4','Масштаб','10 SKU на двух площадках, автоматизация отчётов и контроля']];
+const ST=[['Аудит финансов','Финотчёты WB и Ozon за 3–6 месяцев. Комиссии, логистика, хранение, штрафы, юнит-экономика по SKU','Текущие статьи расходов и план по ним'],['Анализ ниши','MPSTATS по каждому предмету. Объём, динамика за 12 месяцев, сезонность, новые продавцы','Реалистичная цель по каждому предмету'],['Конкуренты','Топ-продавцы по каждому предмету. Цены, дозировки, остатки, SEO, ABC в категории','Таблица мониторинга и SEO-ядро'],['Рекламный бюджет','Сумму определяет собственник. Считаю ставки, ДРР ниши и стоимость выхода в топ, разбираю текущие кампании','Распределение бюджета по каналам и целевой ДРР'],['План','Свожу этапы 1–4 в план и согласую с собственником','План продаж и маркетинговый план']];
+const PT=['Внутренняя реклама на лидеров','Контроль ДРР по каждому товару','Акции только с плюсовой маржой','Еженедельный разбор эффективности каналов'];
+const TK=[['Карточки и контент',['SEO-ядро под конкурентов','Инфографика','Рич-контент','Замер CTR обложек','Вопросы в карточках новинок'],'рост показов и конверсии'],['Цены',['Калькулятор цен по юнит-экономике','Мониторинг цен конкурентов','Календарь акций с расчётом маржи','Ценовая сетка по линейке'],'маржа под контролем'],['Остатки',['Распределение по складам WB и Ozon','План поставок по оборачиваемости','Контроль дней до нуля','FBS для теста новинок'],'товар в наличии и ближе к покупателю'],['Автоматизация',['Автоответы на отзывы и вопросы','Автоотчёты по продажам и рекламе','Сигналы по остаткам','Контроль автоакций Ozon'],'меньше ручной работы и ошибок']];
+const FQ=[['Каждый день','',[['РНП','заказы, выкупы, остатки, позиции, CTR, конверсия, ставки по SKU'],['Рекламный отчёт','расход, клики, заказы, стоимость заказа, ДРР по кампаниям']]],['Каждую неделю','',[['План-факт продаж','выручка, заказы и маржа по SKU и площадкам'],['Мониторинг конкурентов','цены, остатки, позиции и акции'],['План поставок','оборачиваемость, дни до нуля, склады WB и Ozon']]],['Каждый месяц','',[['Финансовый отчёт','выручка, удержания площадок, маржинальная прибыль'],['Юнит-экономика','маржа по SKU, пересчёт при смене тарифов'],['Календарь акций','цена и маржа в акции, решение об участии']]]];
+$('#stages').innerHTML=ST.map((s,i)=>`<div class="row"><h3><span>0${i+1}</span>${s[0]}</h3><p class="sub" style="font-size:15px">${s[1]}</p><p class="res">${s[2]}</p></div>`).join('');
+$('#months').innerHTML=MON.map(m=>`<div class="step"><p class="lbl">${m[0]}</p><p class="num">${m[1]}</p><p class="t">${m[2]}</p></div>`).join('');
+$('#ptasks').innerHTML=PT.map((t,i)=>`<div class="li"><i>0${i+1}</i><p><b>${t}</b></p></div>`).join('');
+$('#tk').innerHTML=TK.map(t=>`<div class="dir"><h3>${t[0]}</h3>${t[1].map((x,i)=>`<div class="li"><i>0${i+1}</i><p><b>${x}</b></p></div>`).join('')}<p class="out"><b>Результат</b> · ${t[2]}</p></div>`).join('');
+$('#fq').innerHTML=FQ.map(f=>`<div class="box"><h3>${f[0]}</h3>${f[2].map(x=>`<div class="tb"><b>${x[0]}</b><span>${x[1]}</span></div>`).join('')}</div>`).join('');
+}
+</script>
+</body>
+</html>
